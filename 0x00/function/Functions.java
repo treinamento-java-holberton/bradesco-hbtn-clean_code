@@ -21,12 +21,12 @@ public class Functions {
 
     //  No side effects
 
-    //B
+    //A
     public User saveUser(User user){
+        if(user.isAdmin){
+            user.setRole(user);
+        }
         return userRepository.save(user);
-    }
-    public void setRole(User user){
-        user.setRole(user);
     }
 
     // Evite duplicados, extraindo para novos métodos
